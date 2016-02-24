@@ -13,6 +13,8 @@ if __name__ == '__main__':
     parser.add_argument('action', help="open, close")
     parser.add_argument('-p', '--vault-password-file', type=str,
                         help="Path to vault password file")
+    parser.add_argument('-f', '--vault-file', type=str,
+                        help="Path to vault file")
     args = parser.parse_args()
     if args.action not in ['open', 'close']:
         raise RuntimeError(
@@ -20,6 +22,6 @@ if __name__ == '__main__':
 
     # Open / Close Vault
     if args.action == 'open':
-        vault.backup_all(args.vault_password_file)
+        vault.backup_all(args.vault_password_file, args.vault_file)
     elif args.action == 'close':
         vault.restore_all(args.vault_password_file)

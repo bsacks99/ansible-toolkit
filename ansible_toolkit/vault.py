@@ -41,9 +41,15 @@ def backup(path, password_file=None):
                 f.write(decrypted_data)
 
 
-def backup_all(password_file=None):
-    for file_ in get_files('.'):
-        backup(file_, password_file)
+def backup_all(password_file=None, vault_file=None):
+
+    if vault_file:
+        if not os.path.isfile(vault_file):
+            raise RuntimeError("Unable to locate vault file")
+        backup(vault_file, password_file)
+    else:
+        for file_ in get_files('.'):
+            backup(file_, password_file)
 
 
 def restore(path, password_file=None):
