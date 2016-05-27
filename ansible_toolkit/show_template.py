@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from ansible.runner import Runner
 from ansible.utils.template import template_from_file
 
@@ -9,7 +11,8 @@ def show_template(host, path, gather_facts=True,
                   inventory_file=None, password_file=None,
                   user=None):
     inventory = get_inventory(inventory_file, password_file)
-    setup_cache = get_gathered_facts(host, inventory, user) if gather_facts else {}
+    setup_cache = get_gathered_facts(
+            host, inventory, user) if gather_facts else {}
     # Show the template
     runner = Runner(
         inventory=inventory,

@@ -1,8 +1,12 @@
-Ansible Toolkit
-===============
+# Ansible Toolkit
 
-Description
------------
+[![Build Status](https://travis-ci.org/dellis23/ansible-toolkit.svg?branch=master)](https://travis-ci.org/dellis23/ansible-toolkit)
+[![Code Health](https://landscape.io/github/dellis23/ansible-toolkit/master/landscape.svg?style=flat)](https://landscape.io/github/dellis23/ansible-toolkit/master)
+[![Coverage Status](https://coveralls.io/repos/github/dellis23/ansible-toolkit/badge.svg?branch=master)](https://coveralls.io/r/dellis23/ansible-toolkit)
+[![Requirements Status](https://requires.io/github/dellis23/ansible-toolkit/requirements.svg?branch=master)](https://requires.io/github/dellis23/ansible-toolkit/requirements/?branch=master)
+
+
+## Description
 
 Ansible is a neat infrastructure management tool, but it sometimes feels
 like the only way to to find out what's going to happen when you run things
@@ -11,8 +15,7 @@ is to... run them.  That's time consuming and potentially dangerous.
 **Ansible Toolkit** hopes to solve that by providing some simple additional
 visibility tools. 
 
-Setup
------
+## Setup
 
 Just pip install it.
 
@@ -39,8 +42,7 @@ If you have multiple Ansible inventories or password files, or for whatever reas
     -i, --inventory
     -p, --vault-password-file
 
-Tools
------
+## Tools
 
 ### atk-show-vars ###
 
@@ -109,50 +111,15 @@ Becomes:
    ![Unencrypted git diff output](https://github.com/dellis23/ansible-toolkit/blob/master/img/git-diff-unencrypted.png)
 
 
-Contributing
-------------
+## Contributing
 
 There's probably a few things here that are too narrow and will only work
 on my team's platform / setup.  If you run into any obvious problems / 
 limitations please create an issue.  If people start using this, I'll be happy
 to make it work for more environments.
 
-Changelog
----------
 
-### 1.3.2 ###
+## Changelog
 
-`atk-show-template` now allows specification of which user to gather facts as.
+Please visit the [Releases page](https://github.com/dellis23/ansible-toolkit/releases).
 
-### 1.3.1 ###
-
-`atk-git-diff` now does not fail when a diff contains deleted or added files.
-
-### 1.3.0 ###
-
-`atk-git-diff` added.
-
-### 1.2.3 ###
-
-Add ability to specify vault password file and inventory file on the command 
-line.
-
-### 1.2.2 ###
-
-Fix the way newlines are handled in vault decryption.
-
-### 1.2.1 ###
-
-Add fact gathering functionality to `atk-show-template`.
-
-### 1.2 ###
-
-`atk-vault` added.
-
-### 1.1 ###
-
-`atk-show-template` added.
-
-### 1.0 ###
-
-Initial version with `atk-show-vars` released.
